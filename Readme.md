@@ -8,6 +8,7 @@ Welcome to the Charity Donation Tracker repository! This project is a decentrali
 - View your connected wallet address and account balance.
 - Make donations to support charitable causes.
 - Monitor the status of your donation transactions.
+- Deposit and Withdraw the Donation
 
 ## Prerequisites
 
@@ -21,3 +22,27 @@ Welcome to the Charity Donation Tracker repository! This project is a decentrali
    ```bash
    git clone https://github.com//charity-donation-tracker.git
 
+2. Navigate to the project directory:
+
+      ```bash
+   cd charity-donation-tracker
+
+3. Install the project dependencies:
+    ```bash
+   npm install
+
+# Usage
+1. Ensure your MetaMask wallet is connected to the Ropsten Ethereum network.
+2. Start the development server:
+    ```bash
+   npm start
+3. Open your web browser and visit http://localhost:3000 to use the app.
+
+## Contribution
+Contributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request.
+
+## Author
+Ashi Yadav
+
+## Licenses
+This project is licensed under the MIT License.
