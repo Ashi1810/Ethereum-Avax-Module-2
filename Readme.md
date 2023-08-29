@@ -1,14 +1,13 @@
-# Donation Tracker App
+# Abacus Calculator App
 
-Welcome to the Charity Donation Tracker repository! This project is a decentralized application (DApp) that enables users to make donations to various charitable causes using the Ethereum blockchain. The DApp is built using React for the frontend and Ethereum smart contracts for the backend.
+Welcome to the Abacus Calculator App repository! This project is a web application that simulates an electronic abacus, allowing users to perform basic arithmetic calculations such as addition, subtraction, multiplication, division, and average calculation
 
 ## Features
 
-- Connect your MetaMask wallet to make donations.
-- View your connected wallet address and account balance.
-- Make donations to support charitable causes.
-- Monitor the status of your donation transactions.
-- Deposit and Withdraw the Donation
+- Perform addition, subtraction, multiplication, division, and average calculations using an electronic abacus interface.
+- Visualize the calculation process step by step.
+- Clear the abacus and start new calculations.
+- User-friendly interface for easy interaction.
 
 ## Prerequisites
 
@@ -38,6 +37,12 @@ Welcome to the Charity Donation Tracker repository! This project is a decentrali
    npm start
 3. Open your web browser and visit http://localhost:3000 to use the app.
 
+## How to Use
+- Start the project
+- Select the operation (add, subtract, multiply, divide) or calculate the average.
+- View the calculation process visually on the abacus.
+- See the final result displayed on the interface.
+  
 ## Contribution
 Contributions are welcome! If you encounter any issues or have suggestions for improvements, please open an issue or submit a pull request.
 
