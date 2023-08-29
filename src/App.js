@@ -134,6 +134,33 @@ function App() {
       setResult("Transaction failed");
     }
   };
+  const handleAverage = async () => {
+    try {
+      if (contract && window.ethereum) {
+        await window.ethereum.request({ method: "eth_requestAccounts" });
+
+        const resultTx = await contract.average(num1, num2, {
+          value: ethers.utils.parseEther("1"),
+        });
+
+        setResult("Transaction sent. Waiting for confirmation...");
+
+        // Wait for the transaction to be mined and get the transaction receipt
+        const receipt = await resultTx.wait();
+
+        // Get the return value from the emitted event
+        if (receipt && receipt.events && receipt.events[0]) {
+          const resultValue = receipt.events[0].args[0];
+          setResult(resultValue.toString());
+        } else {
+          setResult("Transaction failed");
+        }
+      }
+    } catch (error) {
+      console.error(error);
+      setResult("Transaction failed");
+    }
+  };
   const handleDivide = async () => {
     try {
       if (contract && window.ethereum) {
@@ -162,6 +189,7 @@ function App() {
     }
   };
 
+
   useEffect(() => {
     connectToMetaMask();
   }, []);
@@ -169,30 +197,36 @@ function App() {
   return (
     <div className="container">
       <div className="header">
-        <h1>Donation App</h1>
+        <h1> ABACUS (Electronic Calculator)</h1>
       </div>
       {isConnected ? (
         <div className="calculator">
-          <h2>Owner's Address: {ownerAdd}</h2>
-          <h2>Owner's Name: {ownerName}</h2>
+          <h2></h2>
+          <h2></h2>
           
-          <label>Donation Pool:</label>
+          <label> Enter First Number:</label>
           <input
             type="number"
             value={num1}
             onChange={(e) => setNum1(e.target.value)}
           />
-          <label>Amount:</label>
+          <label>Enter Second Number  :</label>
+          
           <input
             type="number"
             value={num2}
             onChange={(e) => setNum2(e.target.value)}
           />
+          <p> </p>
           <br />
-          <button onClick={handleAdd}>Make Donation</button>
-          <button onClick={handleSubtract}>Withdraw Donation</button>
+          <button onClick={handleAdd}>SUM (+)</button>
+          <button onClick={handleSubtract}> SUBTRACT (-)</button>
+          <button onClick={handleMultiply}> MULTIPLICATION (*) </button>
+          <button onClick={handleAverage}> AVERAGE</button>
+          <p> </p>
+          <button onClick={handleDivide}> DIVIDE ( / )</button>
           <br />
-          <p className="result">Remaining Balance: {result}</p>
+          <p className="result">Total: {result}</p>
         </div>
       ) : (
         <button className="connect-button" onClick={connectToMetaMask}>Connect to MetaMask</button>
