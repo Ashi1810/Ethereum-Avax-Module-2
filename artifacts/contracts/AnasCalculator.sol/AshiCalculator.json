@@ -1,7 +1,7 @@
 {
   "_format": "hh-sol-artifact-1",
-  "contractName": "AnasCalculator",
-  "sourceName": "contracts/AnasCalculator.sol",
+  "contractName": "AshiCalculator",
+  "sourceName": "contracts/AshiCalculator.sol",
   "abi": [
     {
       "inputs": [
