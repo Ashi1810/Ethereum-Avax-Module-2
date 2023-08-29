@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.0;
 
-contract AshiContract {
+contract AshiCalculator {
     string public ownerName;
     address public ownerAddress;
 
@@ -14,6 +14,7 @@ contract AshiContract {
     event SubtractionResult(int256 result);
     event MultiplicationResult(int256 result);
     event DivisionResult(int256 result);
+    event AverageResult(int256 result);
 
     function add(int256 a, int256 b) public payable {
         int256 result = a + b;
@@ -34,5 +35,9 @@ contract AshiContract {
         require(b != 0, "Cannot divide by zero");
         int256 result = a / b;
         emit DivisionResult(result);
+    }
+    function average(int256 a, int256 b) public payable {
+        int256 result = (a +b)/2;
+        emit AverageResult(result);
     }
 }
