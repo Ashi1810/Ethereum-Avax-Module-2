@@ -6,9 +6,9 @@ async function main() {
   console.log("Deploying contracts with the account:", deployer.address);
 
   const AshiCalculator = await ethers.getContractFactory("AshiCalculator");
-  const ashiCalculator = await AshiCalculator.deploy("Anas");
+  const ashiCalculator = await AshiCalculator.deploy("Ashi");
 
-  console.log("AshiCalculator address:", AshiCalculator.target);
+  console.log("Ashi address:", AshiCalculator.target);
 }
 
 main()
